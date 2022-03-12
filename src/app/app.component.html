@@ -40,7 +40,7 @@
     <form id="form">
         <h3 id="h3" class="display-6">¿Cúal es tu fecha de nacimiento?</h3>
         <input class="form-control form-control-lg" type="number" placeholder="Día" style="margin-bottom:1%;" [(ngModel)]="user.day" name="day" maxlength="2" required>
-        <input class="form-control form-control-lg" type="string" placeholder="Mes (Ej. Septiembre, Agosto,etc)" style="margin-bottom:1%;" [(ngModel)]="user.month" name="month" maxlength="2" required>
+        <input class="form-control form-control-lg" type="string" placeholder="Mes (Ej. Septiembre, Agosto,etc)" style="margin-bottom:1%;" [(ngModel)]="user.month" name="month" required>
         <input class="form-control form-control-lg" type="number" placeholder="Año" style="margin-bottom:1%;" [(ngModel)]="user.year" name="year" maxlength="4" required>
     </form>
   </div>
@@ -83,10 +83,10 @@
   </div>
   </div>
 
-<div id="formsData" >
+<div id="formsData">
   <div class="row text-center container-fluid">
    <div class="col justify-content-center align-items-center text-center">
-    <button id="btn">
+    <button id="btn" (click)="agregar()">
       Iniciar
     </button>
   </div>
