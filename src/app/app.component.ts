@@ -21,7 +21,7 @@ interface Users{
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'rocketCode';
+  title = 'Chat-Form';
   faCoffee = faCoffee;
   faStopwatch = faStopwatch;
   faClipboardCheck = faClipboardCheck;
