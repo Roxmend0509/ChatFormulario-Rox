@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { faCoffee,faStopwatch,faClipboardCheck,faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { UserService } from './user-service';
+import { ActivatedRoute } from '@angular/router';
 
 
 interface Users{
@@ -29,18 +31,26 @@ export class AppComponent {
 
   user: Users={
     name:'',
-    secondName:'',
     lastName1:'',
-    lastName2:'',
     email:''
   };
 
-
-  agregar(){
-    console.log(this.user)
+  constructor(private userService: UserService, private activatedRoute:ActivatedRoute) {
+     
+     
   }
+
+
 
   cambiarNombre(event:any){
       console.log(event.target.value);
   }
+
+  agregar(){
+      this.userService.post(this.user).subscribe((data)=>{
+      alert("Cliente Agregado");
+     // location.reload();
+    });
+  
+   }
 }
